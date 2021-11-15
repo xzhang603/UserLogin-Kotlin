@@ -4,18 +4,11 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.buttonLogin
 import kotlinx.android.synthetic.main.activity_main.editTextEmail
 import kotlinx.android.synthetic.main.activity_main.editTextPassword
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import simplifiedcoding.net.kotlinretrofittutorial.R
-import simplifiedcoding.net.kotlinretrofittutorial.api.RetrofitClient
-import simplifiedcoding.net.kotlinretrofittutorial.models.DefaultResponse
-import simplifiedcoding.net.kotlinretrofittutorial.models.LoginResponse
 import simplifiedcoding.net.kotlinretrofittutorial.storage.SharedPrefManager
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
@@ -32,18 +25,13 @@ import java.io.IOException
 import android.util.Base64
 import okhttp3.MediaType
 import okhttp3.RequestBody
-import okio.ByteString.decodeBase64
-import java.io.StringReader
-import java.security.spec.PKCS8EncodedKeySpec
 import javax.crypto.Cipher
 import java.security.spec.X509EncodedKeySpec
 import java.security.*
-import java.security.spec.EncodedKeySpec
 import java.util.*
-import org.bouncycastle.util.io.pem.PemReader;
 import org.json.JSONObject
 import android.net.Uri
-import kotlinx.android.synthetic.main.activity_login.textViewRegister as textViewRegister1
+
 
 
 data class Topic(
@@ -83,17 +71,6 @@ class MainActivity : AppCompatActivity() {
             val encrypt = cipher.doFinal(raw_password.toByteArray())
             val password = Base64.encodeToString(encrypt, Base64.DEFAULT)
 
-//            val reader = PemReader(StringReader(publicKeyRaw))
-//            val pemObject = reader.readPemObject()
-//            val keyBytes: ByteArray = pemObject.content
-//            val keySpec: EncodedKeySpec = X509EncodedKeySpec(keyBytes)
-//            val keyFactory = KeyFactory.getInstance("RSA")
-//            val key = keyFactory.generatePublic(keySpec)
-//            val cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding")
-//            cipher.init(Cipher.ENCRYPT_MODE, key)
-//            val cipherData: ByteArray = cipher.doFinal(raw_password.toByteArray())
-//            var password =  Base64.encodeToString(cipherData, Base64.DEFAULT)
-//            password = password.replace("\n","")
 
             if(username.isEmpty()){
                 editTextEmail.error = "username required"
