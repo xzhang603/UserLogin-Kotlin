@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity() {
                         }
                         startActivity(intent)
                     } else{
-                        SharedPrefManager.getInstance(applicationContext).saveUser(username)
+                        SharedPrefManager.getInstance(applicationContext).saveUserInfo(stA)
                         val intent = Intent(applicationContext, ProfileActivity::class.java)
                         runOnUiThread(){
                             Toast.makeText(applicationContext, "login successful", Toast.LENGTH_LONG).show()
@@ -159,7 +159,6 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         println("success")
                     }
-                    println("————成功 $stA")
                 }
             })
         }

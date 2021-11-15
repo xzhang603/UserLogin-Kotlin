@@ -1,7 +1,7 @@
 package simplifiedcoding.net.kotlinretrofittutorial.storage
 
 import android.content.Context
-import simplifiedcoding.net.kotlinretrofittutorial.models.User
+import simplifiedcoding.net.kotlinretrofittutorial.models.userInfo
 
 
 class SharedPrefManager private constructor(private val mCtx: Context) {
@@ -9,24 +9,24 @@ class SharedPrefManager private constructor(private val mCtx: Context) {
     val isLoggedIn: Boolean
         get() {
             val sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
-            return !sharedPreferences.getString("username", "").equals("")
+            return !sharedPreferences.getString("userInfo", "").equals("")
         }
 
-    val user: User
+    val userinfo: userInfo
         get() {
             val sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
-            return User(
-                    sharedPreferences.getString("username", "")
+            return userInfo(
+                    sharedPreferences.getString("userInfo", "")
             )
         }
 
 
-    fun saveUser(username: String) {
+    fun saveUserInfo(userinfo: String) {
 
         val sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
-        editor.putString("username", username)
+        editor.putString("userInfo", userinfo)
 
         editor.apply()
 

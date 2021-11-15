@@ -1,3 +1,3 @@
 package simplifiedcoding.net.kotlinretrofittutorial.models
 
-data class User(val username:String)
+data class userInfo(val userInfo:String)

@@ -44,20 +44,26 @@
             android:hint="password"
             android:inputType="textPassword" />
 
-        <EditText
-            android:id="@+id/editTextCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="5dp"
-            android:hint="Code"
-            android:inputType="text" />
-
-        <ImageView
-            android:id="@+id/imageView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/text"
-            android:layout_marginTop="5dp" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextCode"
+                android:layout_width="181dp"
+                android:layout_height="match_parent"
+                android:drawablePadding="5dp"
+                android:hint="Code"
+                android:inputType="text" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/text"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
 
 
     </LinearLayout>
