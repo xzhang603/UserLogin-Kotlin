@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".activities.ProfileActivity">
 
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@color/colorFormBackground" />
 </android.support.constraint.ConstraintLayout>
